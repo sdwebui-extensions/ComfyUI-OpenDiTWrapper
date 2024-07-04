@@ -629,7 +629,7 @@ class VideoAutoencoderPipeline(PreTrainedModel):
     def __init__(self, config: VideoAutoencoderPipelineConfig):
         super().__init__(config=config)
         self.spatial_vae = VideoAutoencoderKL(
-            from_pretrained="PixArt-alpha/pixart_sigma_sdxlvae_T5_diffusers",
+            from_pretrained="/stable-diffusion-cache/models/stable-diffusion-xl-base-1.0" if os.path.exists("/stable-diffusion-cache/models/stable-diffusion-xl-base-1.0/vae") else "PixArt-alpha/pixart_sigma_sdxlvae_T5_diffusers",
             local_files_only=False,
             micro_batch_size=4,
             subfolder="vae",
