@@ -12,7 +12,7 @@ from collections.abc import Iterable
 
 import torch
 import torch.distributed as dist
-#from colossalai.checkpoint_io import GeneralCheckpointIO
+from colossalai.checkpoint_io import GeneralCheckpointIO
 from torch.utils.checkpoint import checkpoint, checkpoint_sequential
 from torchvision.datasets.utils import download_url
 
