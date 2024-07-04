@@ -45,6 +45,8 @@ pretrained_models = {
 
 def load_from_sharded_state_dict(model, ckpt_path, model_name="model", strict=False):
     ckpt_io = GeneralCheckpointIO()
+    if not os.path.exists(os.path.join(ckpt_path, model_name)):
+        model_name = "model.safetensors"
     ckpt_io.load_model(model, os.path.join(ckpt_path, model_name), strict=strict)
 
 
