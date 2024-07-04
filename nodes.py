@@ -137,7 +137,7 @@ class DownloadAndLoadOpenSoraVAE:
             print("Loading VAE...")
             self.vae = (
             OpenSoraVAE_V1_2(
-                from_pretrained="hpcai-tech/OpenSora-VAE-v1.2",
+                from_pretrained=model_path,
                 micro_frame_size=17,
                 micro_batch_size=4,
                 ).to(offload_device, dtype).eval()
