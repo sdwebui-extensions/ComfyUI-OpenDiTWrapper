@@ -182,8 +182,8 @@ class DownloadAndLoadOpenDiTT5Model:
         model_path = os.path.join(folder_paths.models_dir, "t5", model_name)
         
         if not os.path.exists(model_path):
-            if os.path.exists("/stable-diffusion-cache/models/t5/t5-v1.1-xxl"):
-                model_path = "/stable-diffusion-cache/models/t5/t5-v1.1-xxl"
+            if os.path.exists("/stable-diffusion-cache/models/t5/t5-v1_1-xxl-encoder-bf16"):
+                model_path = "/stable-diffusion-cache/models/t5/t5-v1_1-xxl-encoder-bf16"
             else:
                 print(f"Downloading OpenSora model to: {model_path}")
                 from huggingface_hub import snapshot_download
